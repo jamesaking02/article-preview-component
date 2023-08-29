@@ -1,1 +1,238 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Manrope:wght@500;700&display=swap');
+
+:root {
+--very-dark-grayish-blue: hsl(217, 19%, 35%);
+--desaturated-dark-blue: hsl(214, 17%, 51%);
+--grayish-blue: hsl(212, 23%, 69%);
+--light-grayish-blue: hsl(210, 46%, 95%);
+--rounded-corner: .5rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+body {
+    font-size: 81.25%;
+    font-family: 'Manrope', sans-serif;
+    padding: 6rem 1.5rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-size: clamp(1.1rem, 3vw, 1.8rem);
+    line-height: 1.5;
+    margin-block: 2rem 1rem;
+}
+
+h2 {
+    font-size: .9rem;
+}
+
+h1,
+h2 {
+    color: var(--very-dark-grayish-blue);
+}
+
+h3 {
+  color: var(--grayish-blue);
+  font-weight: 500;
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .3rem;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+.main-img {
+    border-top-left-radius: var(--rounded-corner);
+    border-top-right-radius: var(--rounded-corner);
+}
+
+.component {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 1rem;
+    position: relative;
+    overflow-y: hidden;
+}
+
+.component__content {
+    padding-inline: 2rem;
+}
+
+.component__content--desc {
+    font-size: clamp(.9rem, 3vw, 1rem);
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    color: var(--desaturated-dark-blue);
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.author {
+    display: grid;
+    grid-template: auto auto / 3rem auto;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.author__img {
+    border-radius: 2rem;
+}
+
+.author__name {
+    margin-bottom: .3rem;
+}
+
+.author__date {
+    color: var(--grayish-blue);
+}
+
+.share-bttn {
+    background-color: var(--light-grayish-blue);
+    padding: .5rem;
+    border-radius: 1rem;
+}
+
+.share-bttn:hover {
+    cursor: pointer;
+    background-color: var(--grayish-blue);
+}
+
+.share-bttn:hover > img {
+    filter: invert(100) brightness(100);
+}
+
+.share-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    padding: 1.2rem 2rem;
+    bottom: 0rem;
+    background-color: var(--very-dark-grayish-blue);
+    border-bottom-left-radius: var(--rounded-corner);
+    border-bottom-right-radius: var(--rounded-corner);
+    transform: translateY(0%);
+    transition: transform .4s ease-in-out;
+}
+
+.secondary-share {
+    background-color: var(--desaturated-dark-blue);
+}
+
+.secondary-share > img {
+  filter: invert(100) brightness(100);
+}
+
+.gap1rem {
+  gap: 0 1rem;
+}
+
+.icon-group {
+  display: flex;
+  gap: 0 1rem;
+}
+
+.icon-group > button > img:hover {
+  cursor: pointer;
+  filter: invert(100) brightness(100);
+}
+
+
+.active {
+  transform: translateY(150%);
+}
+
+@media (min-width: 768px) {
+  body {
+    max-height: 100dvh;
+  }
+
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+  }
+
+  .component {
+    display: flex;
+    max-width: 65rem;
+    
+  }
+
+  .main-img {
+    max-width: 25rem;
+    border-top-right-radius: unset;
+    border-bottom-left-radius: var(--rounded-corner);
+  }
+
+  .component__content {
+    padding-inline: 3rem;
+  }
+
+  
+}
+
+@media (min-width: 1440px) {
+  .component {
+    overflow: visible;
+  }
+
+  .share-panel {
+    border-radius: .5rem;
+    width: 15rem;
+    bottom: 5rem;
+    right: -3.3rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .5s ease-in-out;
+  }
+
+  .share-panel::after {
+    content: "";
+    position: absolute;
+    left: 6.7rem;
+    bottom: -.9rem;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid var(--very-dark-grayish-blue);
+  }
+
+  .secondary-share {
+    display: none;
+  }
+
+  .visible {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .active {
+    transform: translateY(0%);
+  }
+}

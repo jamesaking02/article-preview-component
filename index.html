@@ -5,34 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | Article preview component</title>
-
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
+  <script src="./script.js" defer> </script>
 </head>
-<body>
+<body class="preload">
   <main>
-    <img src="" alt="">
-    <h1>
-      Shift the overall look and feel by adding these wonderful 
-      touches to furniture in your home
-    </h1>
-    <p>
-      Ever been in a room and felt like something was missing? Perhaps 
-      it felt slightly bare and uninviting. I’ve got some simple tips 
-      to help you make any room feel complete.
-    </p>
-    <div class="flex-container">
-      <div class="author">
-        <img src="" alt="">
-        <h2>Michelle Appleton</h2>
-        <p>28 Jun 2020</p>
+    <div class="component">
+      <img src="./images/drawers.jpg" alt="drawers" class="main-img">
+      <div class="component__content">
+        <h1>
+          Shift the overall look and feel by adding these wonderful 
+          touches to furniture in your home
+        </h1>
+        <p class="component__content--desc">
+          Ever been in a room and felt like something was missing? Perhaps 
+          it felt slightly bare and uninviting. I’ve got some simple tips 
+          to help you make any room feel complete.
+        </p>
+        <div class="flex-container">
+          <div class="author">
+            <img src="./images/avatar-michelle.jpg" alt="" class="author__img">
+            <div>
+              <h2 class="author__name">Michelle Appleton</h2>
+              <p class="author__date">28 Jun 2020</p>
+            </div>
+            
+          </div>
+          <button title="share" class="share-bttn">
+            <img src="./images/icon-share.svg" alt="">
+          </button>
+        </div>
+        </div>
+        <div class="share-panel active">
+          <div class="flex-container gap1rem">
+            <h3>Share</h3>
+            <div class="icon-group">
+              <button title="facebook-share">
+                <img src="./images/icon-facebook.svg" alt="">
+              </button>
+              <button title="twitter-share">
+                <img src="./images/icon-twitter.svg" alt="">
+              </button>
+              <button title="pinterest-share">
+                <img src="./images/icon-pinterest.svg" alt="">
+              </button>
+          </div>
+          </div>
+          
+          <button title="share" class="share-bttn secondary-share">
+            <img src="./images/icon-share.svg" alt="">
+          </button>
       </div>
-      <button class="share-bttn"></button>
     </div>
   </main>
   
@@ -42,11 +71,13 @@
   
   
 
-  Share
+  <!-- Share -->
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+  
 </body>
+
 </html>
